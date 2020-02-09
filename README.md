@@ -13,5 +13,15 @@
 * transformers(pytorch transformer)
 * python 3.x
 
-# 4. 
+# 4. 流程
+(1) 将句子分词（包括subword）并进行编码（索引）和padding
+(2) 将输入向量传递给 DistilBert 之后的工作方式就跟在 BERT 中一样，每个输入的词都会得到一个由 768 个浮点数组成的输出向量。<br>
+![](https://github.com/orangerfun/BertLogisticRegression/raw/master/DistilBert.png)<br>
+由于这是个句子分类任务，我们只关心第一个向量（与 [CLS] 对应的向量）。该向量就是我们输入给 logistic 回归模型的向量。<br>
+![](https://github.com/orangerfun/BertLogisticRegression/raw/master/all.png)<br>
+
+# 5.参考
+* https://github.com/jalammar/jalammar.github.io/blob/master/notebooks/bert/A_Visual_Notebook_to_Using_BERT_for_the_First_Time.ipynb
+* [Bert快速入门指南](https://mp.weixin.qq.com/s?__biz=MzU3NjE4NjQ4MA==&mid=2247486729&idx=2&sn=4e607e4d82fce53807b760b1192b5be0&chksm=fd16fc16ca617500337d464c9374705dfdcf8a522e990c07a05096886f34c09b724c78b77ead&scene=0&xtrack=1&key=956aab8526dddd2f6f6857470f07376315d7ba18fc98b1b2d276786d9d1b4da87fe5705f6d6132c9aa98298e7752d2bd64551332e5fdd2bc3565e4db836f1dd106ae6707047a041e3e56bf0f036d6182&ascene=14&uin=MjUwMzAyMzA2Mg%3D%3D&devicetype=Windows+10&version=62070158&lang=zh_CN&exportkey=Aa%2Fv46F0haL%2BEBCuyAkPwpo%3D&pass_ticket=qtOC5Cpe9%2FWtRHIdqFXRmywHx0MTQN7K58ewsCedWiwtYA55Y1hOunyT45%2FgOEtO)
+
 
